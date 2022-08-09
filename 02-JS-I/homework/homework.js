@@ -64,7 +64,7 @@ function sonIguales(x, y) {
   // Devuelve "true" si "x" e "y" son iguales
   // De lo contrario, devuelve "false"
   // Tu código:
-  if(x=y){return true;}
+  if(x==y){return true;}
   else {return false;}
 }
 
@@ -72,7 +72,7 @@ function tienenMismaLongitud(str1, str2) {
   // Devuelve "true" si las dos strings tienen la misma longitud
   // De lo contrario, devuelve "false"
   // Tu código:
-  if(str1.lenght=y.lenght){return true;}
+  if(str1.lenght==y.lenght){return true;}
   else {return false;}
 }
 
@@ -154,7 +154,7 @@ function redondearHaciaArriba(num) {
 function numeroRandom() {
   //Generar un número al azar entre 0 y 1 y devolverlo
   //Pista: investigá qué hace el método Math.random()
-  var result=Math.random;
+  var result=Math.random();
   return result;
 }
 
@@ -188,7 +188,7 @@ function combinarNombres(nombre, apellido) {
   // Devuelve "nombre" y "apellido" combinados en una string y separados por un espacio.
   // Ejemplo: "Soy", "Henry" -> "Soy Henry"
   // Tu código:
-  var newString=nombre+' '+apellido
+  var newString=nombre+' '+apellido;
   return newString;
 }
 
@@ -196,7 +196,7 @@ function obtenerSaludo(nombre) {
   // Toma la string "nombre" y concatena otras string en la cadena para que tome la siguiente forma:
   // "Martin" -> "Hola Martin!"
   // Tu código:
-  var newString='Hola '+nombre
+  var newString='Hola '+nombre+'!';
   return newString;
 }
 
@@ -219,7 +219,7 @@ function retornarPerimetro(lado){
 function areaDelTriangulo(base, altura){
   //Desarrolle una función que calcule el área de un triángulo.
   //Escribe tu código aquí
-  var area=base*altura;
+  var area=(base*altura)/2;
   return area;
 }
 
@@ -249,6 +249,7 @@ function esVocal(letra){
   else{
     result='Dato incorrecto';
   }
+  return result;
 }
 
 
