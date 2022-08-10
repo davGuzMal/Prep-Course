@@ -130,14 +130,14 @@ function fizzBuzz(numero) {
   // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
   // De lo contrario, devuelve el numero
   var output
-  if(numero%5===0){
-    output='buzz';
+  if(numero%3===0 && numero%5===0){
+    output='fizzbuzz';
   }
   else if (numero%3===0){
     output='fizz';
   }
-  else if(numero%3===0 && numero%5===0){
-    output='fizzbuzz';   
+  else if(numero%5===0){
+    output='fbuzz';   
   }
   else{
     output=numero;
@@ -153,17 +153,9 @@ function operadoresLogicos(num1, num2, num3) {
   //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
   //Si no se cumplen ninguna de las condiciones anteriores, retornar false.
   var output;
+  var outputn;
   if ((num1<0)||(num2<0)||(num2<0)){
     output='Hay negativos';
-    return output;
-  }
-  else{
-  if((num1>num2)&&(num1>num3)&&(num1>0)){
-    output='Número 1 es mayor y positivo';
-    return output;
-  }
-  else if((num3>num2)&&(num3>num1)){
-    output=num3++;    
     return output;
   }
   else if ((num1===0)||(num2===0)||(num2===0)){
@@ -171,9 +163,18 @@ function operadoresLogicos(num1, num2, num3) {
     return output;
   }
   else{
-    output=false;
-    return output;
-  }  
+    if((num1>num2)&&(num1>num3)&&(num1>0)){
+      output='Número 1 es mayor y positivo';
+      return output;
+    }
+    else if((num3>num2)&&(num3>num1)){
+      outputn=num3+1;    
+      return outputn;
+    }  
+    else{
+      output=false;
+      return output;
+    }  
 }
 }
 
@@ -232,7 +233,7 @@ function tablaDelSeis(){
 function tieneTresDigitos(numero){
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
-  if(numero.toString().length=3){
+  if(numero.toString().length===3){
     return true;
   }
   else{
@@ -246,7 +247,7 @@ function doWhile(numero) {
   //Usar el bucle do ... while.
   var i=0;
   do{
-    numero=+5;
+    numero=numero+5;
     i++;
   }while(i<7)
 }
