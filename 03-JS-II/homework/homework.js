@@ -100,7 +100,7 @@ function estaEnRango(numero) {
   // Devuelve "true" si "numero" es menor que 50 y mayor que 20
   // De lo contrario, devuelve "false"
   // Tu código:
-  if(numero>50 || numero<20 ){
+  if(numero<50 && numero>20 ){
     return true;
   }
   else {
@@ -130,19 +130,17 @@ function fizzBuzz(numero) {
   // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
   // De lo contrario, devuelve el numero
   var output
-  switch(numero){
-    case(numero%3===0 && numero%5===0):
-      output='fizzbuzz';
-    break;
-    case(numero%3===0):
-      output='fizz';
-    break;
-    case(numero%5===0):
-      output='buzz';
-    break;    
-    default:
-      output=numero;
-    break;
+  if(numero%5===0){
+    output='buzz';
+  }
+  else if (numero%3===0){
+    output='fizz';
+  }
+  else if(numero%3===0 && numero%5===0){
+    output='fizzbuzz';   
+  }
+  else{
+    output=numero;
   }
   return output;
 }
@@ -155,22 +153,28 @@ function operadoresLogicos(num1, num2, num3) {
   //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
   //Si no se cumplen ninguna de las condiciones anteriores, retornar false.
   var output;
+  if ((num1<0)||(num2<0)||(num2<0)){
+    output='Hay negativos';
+    return output;
+  }
+  else{
   if((num1>num2)&&(num1>num3)&&(num1>0)){
     output='Número 1 es mayor y positivo';
-  }
-  else if ((num1<0)||(num2<0)||(num2<0)){
-    output='Hay negativos';
+    return output;
   }
   else if((num3>num2)&&(num3>num1)){
     output=num3++;    
+    return output;
   }
   else if ((num1===0)||(num2===0)||(num2===0)){
     output='Error';
+    return output;
   }
   else{
     output=false;
-  }
-  return output;
+    return output;
+  }  
+}
 }
 
 function esPrimo(numero) {
@@ -228,7 +232,7 @@ function tablaDelSeis(){
 function tieneTresDigitos(numero){
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
-  if(numero-100>=0){
+  if(numero.toString().length=3){
     return true;
   }
   else{
