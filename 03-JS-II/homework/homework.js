@@ -137,7 +137,7 @@ function fizzBuzz(numero) {
     output='fizz';
   }
   else if(numero%5===0){
-    output='fbuzz';   
+    output='buzz';   
   }
   else{
     output=numero;
@@ -250,6 +250,7 @@ function doWhile(numero) {
     numero=numero+5;
     i++;
   }while(i<7)
+  return numero;
 }
 
 
