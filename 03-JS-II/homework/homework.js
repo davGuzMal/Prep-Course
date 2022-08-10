@@ -249,7 +249,7 @@ function doWhile(numero) {
   do{
     numero=numero+5;
     i++;
-  }while(i<7)
+  }while(i<8)
   return numero;
 }
 
