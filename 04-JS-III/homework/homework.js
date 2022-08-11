@@ -214,19 +214,22 @@ function mesesDelAño(array) {
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
-  var meses=new Array(3);
+  var meses=new Array();
   var j=0;
   for(var i=0; i<array.length; i++){
     if(array[i]==='Enero' || array[i]==='Marzo' || array[i]==='Noviembre'){
       meses[j]=array[i];
-      j++;
+    }  
+    else{
+      meses[j]=' ';
     }
+    j++;
   }
-  //for(var k=0; k<meses.length; k++){
-    if(meses[2]!=='Enero' || meses[2]!=='Marzo' || meses[2]!=='Diciembre'){
+  for(var k=0; k<meses.length; k++){
+    if(meses[k]===' '){
       return 'No se encontraron los meses pedidos';
     }
-  //}
+  }
   return meses;
 }
 
