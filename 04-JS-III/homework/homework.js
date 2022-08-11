@@ -183,9 +183,9 @@ function empiezaConNueve(n) {
     }
   }
   else if (n>10){
-    for(var i=0; n<10; i++){
+    do{
       n=Math.floor(n/10);
-    }
+    }while(n>=10)
     if(n===9){
       return true
     }
@@ -222,11 +222,11 @@ function mesesDelAño(array) {
       j++;
     }
   }
-  for(var k=0; k<meses.length; k++){
-    if(meses[k]===''){
+  //for(var k=0; k<meses.length; k++){
+    if(meses[2]!=='Enero' || meses[2]!=='Marzo' || meses[2]!=='Diciembre'){
       return 'No se encontraron los meses pedidos';
     }
-  }
+  //}
   return meses;
 }
 
