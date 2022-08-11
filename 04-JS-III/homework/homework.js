@@ -219,14 +219,12 @@ function mesesDelAño(array) {
   for(var i=0; i<array.length; i++){
     if(array[i]==='Enero' || array[i]==='Marzo' || array[i]==='Noviembre'){
       meses[j]=array[i];
+      j++;
     }  
-    else{
-      meses[j]=' ';
-    }
-    j++;
+    
   }
   for(var k=0; k<meses.length; k++){
-    if(meses[k]===' '){
+    if(meses[k]==='' || meses.length<3){
       return 'No se encontraron los meses pedidos';
     }
   }
@@ -280,6 +278,22 @@ function continueStatement(numero) {
   //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
+  var array=new Array();
+  
+  for (var i =0; i<10; i++){
+    if(i===5){
+      continue;
+    }
+    else if(i<5){
+      numero=numero+2;
+      array[i]=numero;    
+    }
+    else if (i>5){
+      numero+= 2;
+      array[i-1]=numero;
+    }
+  }
+  return array;
 }
 
 
