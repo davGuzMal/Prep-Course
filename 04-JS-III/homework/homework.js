@@ -184,7 +184,7 @@ function empiezaConNueve(n) {
   }
   else if (n>10){
     for(var i=0; n<10; i++){
-      n=parseInt(n/10);
+      n=Math.floor(n/10);
     }
     if(n===9){
       return true
@@ -214,7 +214,7 @@ function mesesDelAño(array) {
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
-  var meses=new Array();
+  var meses=new Array(3);
   var j=0;
   for(var i=0; i<array.length; i++){
     if(array[i]==='Enero' || array[i]==='Marzo' || array[i]==='Noviembre'){
@@ -222,7 +222,7 @@ function mesesDelAño(array) {
       j++;
     }
   }
-  for(var k=0; k<3; k++){
+  for(var k=0; k<meses.length; k++){
     if(meses[k]===''){
       return 'No se encontraron los meses pedidos';
     }
