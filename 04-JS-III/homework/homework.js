@@ -27,7 +27,7 @@ function incrementarPorUno(array) {
   // y devuelve el array
   // Tu código:
   for(var i=0; i<array.length; i++){
-    array[i]=array[i]++;
+    array[i]=array[i]+1;
   }
   return array
 }
@@ -60,7 +60,12 @@ function dePalabrasAFrase(palabras) {
   // Tu código:
   var cadena='';
   for(var i=0; i<palabras.length; i++){
-    cadena= cadena+' '+palabras[i];
+    if(cadena===''){
+      cadena=palabras[i];
+    }
+    else{
+      cadena= cadena+' '+palabras[i];
+    }
   }
   return cadena;
 }
@@ -71,7 +76,7 @@ function arrayContiene(array, elemento) {
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
   for(var i=0; i<array.length; i++){
-    if(array[i]=elemento){
+    if(array[i]===elemento){
       return true;
     }
   }
@@ -123,15 +128,15 @@ function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
-  var producto=0;
-  if(multiplicarArgumentos.length===0){
+  var producto=1;
+  if(arguments.length===0){
     producto=0;
   }
-  else if (multiplicarArgumentos.length===1){
-    producto=arguments;
+  else if (arguments.length===1){
+    producto=arguments[0];
   }
   else{
-    for(var i=0; i<multiplicarArgumentos.length; i++){
+    for(var i=0; i<arguments.length; i++){
       producto=producto*arguments[i];
     }
   }
@@ -178,8 +183,8 @@ function empiezaConNueve(n) {
     }
   }
   else if (n>10){
-    for(var i=0; n>10; i++){
-      n=trunc(n/10);
+    for(var i=0; n<10; i++){
+      n=parseInt(n/10);
     }
     if(n===9){
       return true
@@ -193,9 +198,9 @@ function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí  
-  var aux;
+  var aux=arreglo[0];
   for(var i=0; i<arreglo.length; i++){
-    aux=arreglo[i];
+    //aux=arreglo[i];
     if(aux!==arreglo[i]){
       return false;
     }
@@ -217,7 +222,7 @@ function mesesDelAño(array) {
       j++;
     }
   }
-  for(var k=0; k<meses.length; k++){
+  for(var k=0; k<3; k++){
     if(meses[k]===''){
       return 'No se encontraron los meses pedidos';
     }
